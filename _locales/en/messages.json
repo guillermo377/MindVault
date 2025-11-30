@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Mind Vault - Stateless Password Generator",
+    "description": "The name of the extension"
+  },
+  "appDesc": {
+    "message": "Generate unbreakable SHA-256 passwords without storage. No cloud, no DB. You control your keys. Your mind is your fortress.",
+    "description": "Short description (max 132 chars)"
+  }
+}

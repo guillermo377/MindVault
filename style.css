@@ -1,0 +1,253 @@
+/* --- GENERAL CONFIGURATION --- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 320px; /* Fixed width for the Chrome Extension popup */
+  background-color: #f4f4f9;
+  padding: 15px;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Spacing between elements */
+}
+
+/* --- HEADER & FLAGS --- */
+.header-row {
+  display: flex;
+  justify-content: space-between; /* Title on left, flags on right */
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #2c3e50;
+}
+
+.flags {
+  display: flex;
+  gap: 10px;
+}
+
+.flag-btn {
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.4; /* Faded when inactive */
+  transition: opacity 0.2s, transform 0.2s;
+  filter: grayscale(100%); /* Black and white when inactive */
+}
+
+.flag-btn:hover {
+  opacity: 0.8;
+  transform: scale(1.1); /* Slight zoom effect */
+  filter: grayscale(0%); /* Color on hover */
+}
+
+.flag-btn.active {
+  opacity: 1;
+  filter: grayscale(0%); /* Full color for active language */
+  border-bottom: 2px solid #3498db; /* Blue underline */
+}
+
+/* --- INPUTS & LABELS --- */
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3498db; /* Blue border on focus */
+}
+
+/* --- PASSWORD INPUT WITH EYE ICON --- */
+.password-container {
+  position: relative; /* Needed to position the eye icon absolutely inside */
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 40px; /* Space on the right so text doesn't overlap the eye */
+  box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%); /* Perfectly centered vertically */
+  cursor: pointer;
+  color: #888; /* Grey color for the SVG lines */
+  opacity: 0.6;
+  user-select: none; /* Prevents selecting the icon as text */
+  transition: opacity 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password:hover {
+  opacity: 1;
+  color: #3498db; /* Blue on hover */
+}
+
+/* --- LENGTH INPUT & TOOLTIP --- */
+.options-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#lengthInput {
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+  margin-left: 10px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  cursor: help;
+}
+
+/* The question mark circle */
+.icon-question {
+  background-color: #ccc;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.tooltip:hover .icon-question {
+  background-color: #3498db;
+}
+
+/* The actual text bubble (hidden by default) */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  
+  /* Positioning above the icon */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -110px; /* Centers the tooltip */
+  
+  /* Animation */
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+/* The little arrow at the bottom of the bubble */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* --- ACTION BUTTONS --- */
+button {
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#btnCopy {
+  background-color: #27ae60; /* Green color for Copy button */
+  margin-top: 5px;
+}
+
+#btnCopy:hover {
+  background-color: #219150;
+}
+
+#status {
+  text-align: center;
+  font-size: 12px;
+  min-height: 15px;
+  color: #27ae60;
+  margin-top: 5px;
+}
+
+/* --- FOOTER (SUBTLE LINK STYLE) --- */
+.footer {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.8rem;
+  color: #999;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+#donateLink {
+  color: #7f8c8d; /* Discrete Grey */
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  background: none;
+  box-shadow: none;
+  padding: 5px;
+}
+
+#donateLink:hover {
+  color: #e74c3c; /* Turns Red on hover to match the heart */
+  transform: scale(1.05); /* Slight zoom */
+  background-color: transparent;
+  box-shadow: none;
+}
+
+#donateLink:active {
+  transform: scale(0.95);
+  color: #c0392b;
+}

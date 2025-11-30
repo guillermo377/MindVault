@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Mind Vault - Generador de Passwords Sin Huella",
+    "description": "El nombre de la extensión"
+  },
+  "appDesc": {
+    "message": "Genera contraseñas SHA-256 inquebrantables sin guardarlas. Sin nube, sin base de datos. Tú tienes el control. Tu mente es tu fortaleza.",
+    "description": "Descripción corta (max 132 chars)"
+  }
+}

@@ -46,6 +46,13 @@ The generation process is transparent and auditable:
 3.  **Hashing:** Applies **SHA-256** to the result string.
 4.  **Mapping:** Converts the resulting hash bytes into a human-readable string using a custom "Safe Character Set" to ensure strong entropy.
 
+## 🧠 Advanced Security Arguments
+
+Mind Vault is built to defend against modern vulnerabilities:
+
+* **2FA is Not Enough:** Two-Factor Authentication (2FA) methods can be compromised via phishing or SIM swapping. Your complex, unique password remains the **crucial first line of defense**.
+* **Biometrics are Permanent:** Biometric data (Face ID, Fingerprint) cannot be changed if compromised by sophisticated hardware or deepfake technology. Mind Vault allows you to change your Master Seed instantly if a breach is suspected, offering a layer of revocable security that biometrics lack.
+
 ## 🔒 Security Architecture
 
 * **Permissions:** Minimal permissions required (`clipboardWrite`). We do not ask for "Read/Write data on all websites".
